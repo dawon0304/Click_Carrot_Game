@@ -1,72 +1,66 @@
-body{
-  margin: 50px auto;
-  
+*{
+  margin: 0 auto;
 }
 
-p{
-  font-weight: 700;
-  font-size: 30px;
+body{
+  position:relative;
+  align-content: center;
 }
 
 img{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   height: 90vh;
+  margin: 0 auto;
+  position:absolute;
+  top: 40px;
+  left: 10%;
 }
 
-.bug{
-  width: 50px;
-  height: 50px;
-  
-}
-
-.carrot{
-  position: relative;
-  bottom: -530px;
-  width: 80px;
-  height: 70px;
-}
-
-
-.countBox {
+#countBox{
   position: absolute;
-  right: 100vh;
-  top: 150px;
-  
+  top:130px;
+  left:44%;
   text-align: center;
-  
 }
 
-.playBtn{
+#countBox > div#timer {
+  width: 100px;
+  border: 3px solid black;
+  border-radius:10%;
+  font-size: 2em;
+  margin: 10px 0 10px 0;
+  background-color: antiquewhite;
+}
+
+#countBox > div#numCarrot {
   width: 50px;
   border: 3px solid black;
-  border-radius: 10px;
-  padding: 5px;
-  margin: 10px auto;
-  background-color: rgb(236, 139, 28);
+  border-radius:50%;
+  font-size: 2em;
+  background-color:salmon;
+  
 }
 
-.count{
-  width: 130px;
-  border: 3px solid black;
-  border-radius: 10px;
+
+#pop-up {
+  width: 300px;
+  position: absolute;
+  top:600px;
+  left: 38%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.438);
+  padding: 20px;
+  border-radius: 5%;
+}
+
+#pop-up>#pop-up__refresh {
   margin-bottom: 10px;
-  background-color: aliceblue;
+  border-radius: 10px;
+  border: inherit;
+  padding: 15px;
 }
 
-.count p,
-.countCarrot p {
-  margin: 0;
-}
-
-.countCarrot{
-  width: 50px;
-  height: 50px;
-  border: 3px solid black;
-  border-radius: 30px;
-  text-align: center;
-  margin: auto;
-  background-color: salmon;
+#pop-up> span {
+  font-size: 2em;
+  font-weight: bolder;
 }
