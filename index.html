@@ -7,29 +7,31 @@
   <title>Document</title>
     <!-- 폰트어썸 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="./index.js" defer></script>
   <link rel="stylesheet" href="index.css">
+  <script src="./index.js" defer></script>
+
   
 </head>
 <body>
-  <section id="main">
-    <img src="./src/img/background.png" alt="">
+  <section class="game">
+    <header class="game__header">
+      <button class="game__btn">
+        <i class="fa-solid fa-play"></i>
+      </button>
+      <span class="game__timer">0:0</span>
+      <span class="game__score">9</span>
+    </header>
+    <section class="game__field">
+      <div class="img">
+        <img src="" alt="">
+      </div>
+    </section>
+    <div class="pop-up pop-up--hide">
+      <button class="pop-up__btn">
+        <i class="fa-solid fa-rotate-left"></i>
+      </button>
+      <span class="pop-up__message">hello</span>
+    </div>
   </section>
-
-  <header id="countBox">
-    <button id="playIcon">
-      <i class="fa-solid fa-play fa-3x"></i>
-    </button>
-    <div id="timer">0:0</div>
-    <div id="numCarrot">0</div>
-  </header>
-
-  <div id="pop-up">
-    <button id="pop-up__refresh">
-      <i class="fa-solid fa-rotate-left fa-3x"></i>
-    </button>
-    <span id="pop-up__message">YOU WON!</span>
-  </div>
-  
 </body>
 </html>

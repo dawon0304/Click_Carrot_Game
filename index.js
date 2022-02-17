@@ -1,17 +1,41 @@
+'use strict'
+var CARROT_SIZE = 80;
 
-// 배경음악 play/ pause기능
-const bgaudio = new Audio();
-bgaudio.src = "./src/sound/bg.mp3";
+var field = document.querySelector('.game__field');
+var fieldRect = field.getBoundingClientRect();
 
-  function playBg() {
-  bgaudio.play();
+function initGame(){
+  console.log(fieldRect);
+  addItem('carrot', 5, 'img/carrot.png');
+  addItem('bug', 5, 'img/bug.png');
+  
 }
-
-  function pauseBg() {
-    bgaudio.pause();
+  function addItem(className, count, imgPath) {
+    const 왼쪽x = 0;
+    const 왼쪽y = 0;
+    const 오른쪽x = fieldRect.width - CARROT_SIZE;
+    const 오른쪽y = fieldRect.height - CARROT_SIZE;
+    // 만들고싶은 갯수만큼의 범위 지정해주기
+    for (let i =0; i<count; i++){
+      const item = document.createElement('img');
+      item.setAttribute('class', className);
+      item.setAttribute('src', imgPath);
+      item.style.position = 'absolute';
+      // 우리가 배치할 포지션의 랜던함 값을 지정해주기
+      const x = randomNumber(왼쪽x, 오른쪽x);
+      const y = randomNumber(왼쪽y, 오른쪽y);
+      //  랜덤포지션의 변수들을 아이템(벅스와 캐럿)의 position left와 top값에 지정해주면 들어갈 수 있도록 설정해주기.
+      item.style.left = `${x}px`;
+      item.style.top = `${y}px`;
+      field.appendChild(item);
+    }
   }
 
-  // 결과박스 
+  // 지정된 min, max 사이에있는 숫자를 return해주면된다.
+  function randomNumber(min, max){
+      return Math.random() * (max - min) + min;
+  }
+initGame();
 
 
 
@@ -19,35 +43,3 @@ bgaudio.src = "./src/sound/bg.mp3";
 
 
 
-
-
-
-// var timeInSecs;
-// var ticker;
-
-// function startTimer(secs) {
-// timeInSecs = parseInt(secs);
-// ticker = setInterval("tick()", 1000); 
-// }
-
-// function tick( ) {
-// var secs = timeInSecs;
-// if (secs > 0) {
-// timeInSecs--; 
-// }
-// else {
-// clearInterval(ticker);
-// startTimer(1*10); //10seconds
-// }
-
-// var mins = Math.floor(secs/60);
-// secs %= 60;
-// var pretty = ( (mins < 10) ? "0" : "" ) + mins + ":" + ( (secs < 10) ? "0" : "" ) + secs;
-
-// document.getElementById("seconds").innerHTML = pretty;
-// }
-
-// startTimer(1*10); //10seconds
-
-
-//Credits to Gulzaib from Pakistan

@@ -1,66 +1,102 @@
-*{
-  margin: 0 auto;
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
-body{
-  position:relative;
-  align-content: center;
-}
-
-img{
-  height: 90vh;
-  margin: 0 auto;
-  position:absolute;
-  top: 40px;
-  left: 10%;
-}
-
-#countBox{
-  position: absolute;
-  top:130px;
-  left:44%;
+body {
   text-align: center;
 }
 
-#countBox > div#timer {
-  width: 100px;
-  border: 3px solid black;
-  border-radius:10%;
-  font-size: 2em;
-  margin: 10px 0 10px 0;
-  background-color: antiquewhite;
-}
-
-#countBox > div#numCarrot {
-  width: 50px;
-  border: 3px solid black;
-  border-radius:50%;
-  font-size: 2em;
-  background-color:salmon;
-  
-}
-
-
-#pop-up {
-  width: 300px;
-  position: absolute;
-  top:600px;
-  left: 38%;
+.game {
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.438);
+  width: 800px;
+  height: 500px;
+  margin: auto;
+  background: url(background.png) center/cover;
+}
+
+
+.game__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
-  border-radius: 5%;
 }
 
-#pop-up>#pop-up__refresh {
-  margin-bottom: 10px;
-  border-radius: 10px;
-  border: inherit;
-  padding: 15px;
+.game__btn {
+  width: 60px;
+  height: 60px;
+  background-color: wheat;
+  border: 4px solid black;
+  font-size: 24px;
+  transition: trnsform 300ms ease-in;
+
 }
 
-#pop-up> span {
-  font-size: 2em;
-  font-weight: bolder;
+.game__btn:hover {
+  transform: scale(1.1);
+}
+
+.game__timer {
+  width: 100px;
+  background-color: aliceblue;
+  text-align: center;
+  border: 5px solid black;
+  border-radius: 20px;
+  font-size: 32px;
+  margin-top: 8px;
+}
+
+.game__score {
+  text-align: center;
+  width: 65px;
+  height: 65px;
+  margin-top: 8px;
+  font-size: 46px;
+  background-color: darksalmon;
+  border: 3px solid black;
+  border-radius: 50%;
+  color: white;
+}
+
+/* 당근이랑 벌레가 위치할 공간도 따로 지정해줘야한다. */
+.game__field {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 25px;
+
+}
+
+
+.pop-up {
+  width: 400px;
+  height: 120px;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  transform: translateY(-100%);
+}
+
+.pop-up--hide {
+  display: none;
+}
+
+.pop-up__refresh {
+  width: 60px;
+  height: 60px;
+  background-color: wheat;
+  border: 2px solid black;
+  border-radius: 50%;
+
+}
+
+.pop-up__message {
+  display: block;
+  font-size: 38px;
 }
