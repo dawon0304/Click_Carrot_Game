@@ -4,6 +4,7 @@ var CARROT_SIZE = 80;
 var field = document.querySelector('.game__field');
 var fieldRect = field.getBoundingClientRect();
 
+
 function initGame(){
   console.log(fieldRect);
   addItem('carrot', 5, 'img/carrot.png');
@@ -36,6 +37,37 @@ function initGame(){
       return Math.random() * (max - min) + min;
   }
 initGame();
+
+// game start
+var playBtn = document.querySelector('.game__btn');
+var score = document.querySelector('.game__score');
+var playIcon = document.querySelector('.fa-play');
+var stopBtn = playBtn.className('class', 'fa-solid fa-pause');
+
+function playGame(){
+  playIcon.className = ".fa-pause";
+  
+}
+
+function playMusic(){
+  var music = new Audio('./sound/bg.mp3');
+  music.play();
+}
+function stopMusic(){
+  var music = new Audio('./sound/bg.mp3');
+  music.pause();
+  music.currentTime = 0;
+}
+playIcon.addEventListener("click",playGame);
+playBtn.addEventListener("click", playMusic);
+
+
+
+https://www.delftstack.com/ko/howto/javascript/count-down-timer-in-javascript/
+
+
+
+  
 
 
 
