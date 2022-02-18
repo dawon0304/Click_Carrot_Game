@@ -1,14 +1,61 @@
 'use strict'
-var CARROT_SIZE = 80;
+const CARROT_SIZE = 80;
+const CARROT_COUNT = 5;
+const BUG_CONT = 5;
+const field = document.querySelector('.game__field');
+const fieldRect = field.getBoundingClientRect();
+const gameBtn = document.querySelector('.game__button');
+const gameTimer = document.querySelector('.game__timer'); 
+const gameScore = document.querySelector('.game__score');
 
-var field = document.querySelector('.game__field');
-var fieldRect = field.getBoundingClientRect();
+let started = false;
+let score = 0;
+let timer = undefined;
+
+gameBtn.addEventListener('click', ()=> {
+  // 게임이 시작됐다면 게임을 멈추면되고, 게임이 멈춘다면 게임을 시작하면됨. 
+  if(started) {
+    stopGame();
+  } else {
+    startGame();
+  }
+  started = !started;  //started가 true라면 반대인 false가 할당되고, false라면 true가 할당된다. 
+});
+
+  function startGame() {
+    initGame();
+  }
+
+  function stopGame(){}
+
+
+  
+// var playBtn = document.querySelector('.game__btn');
+// var score = document.querySelector('.game__score');
+// var playIcon = document.querySelector('.fa-play');
+
+
+
+// function playGame(){
+//   playIcon.className = ".fa-pause";
+  
+// }
+
+// function playMusic(){
+//   var music = new Audio('./sound/bg.mp3');
+//   music.play();
+//   music.currentTime = 0;
+// }
+// function stopMusic(){
+//   var music = new Audio('./sound/bg.mp3');
+//   music.pause();
+//   music.currentTime = 0;
+// }
 
 
 function initGame(){
-  console.log(fieldRect);
-  addItem('carrot', 5, 'img/carrot.png');
-  addItem('bug', 5, 'img/bug.png');
+  addItem('carrot', CARROT_COUNT, 'img/carrot.png');
+  addItem('bug', BUG_CONT, 'img/bug.png');
   
 }
   function addItem(className, count, imgPath) {
@@ -36,34 +83,13 @@ function initGame(){
   function randomNumber(min, max){
       return Math.random() * (max - min) + min;
   }
-initGame();
-
-// game start
-var playBtn = document.querySelector('.game__btn');
-var score = document.querySelector('.game__score');
-var playIcon = document.querySelector('.fa-play');
-var stopBtn = playBtn.className('class', 'fa-solid fa-pause');
-
-function playGame(){
-  playIcon.className = ".fa-pause";
-  
-}
-
-function playMusic(){
-  var music = new Audio('./sound/bg.mp3');
-  music.play();
-}
-function stopMusic(){
-  var music = new Audio('./sound/bg.mp3');
-  music.pause();
-  music.currentTime = 0;
-}
-playIcon.addEventListener("click",playGame);
-playBtn.addEventListener("click", playMusic);
 
 
 
-https://www.delftstack.com/ko/howto/javascript/count-down-timer-in-javascript/
+
+
+
+
 
 
 

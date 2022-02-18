@@ -25,7 +25,7 @@ body {
   padding: 20px;
 }
 
-.game__btn {
+.game__button {
   width: 60px;
   height: 60px;
   background-color: wheat;
@@ -35,7 +35,7 @@ body {
 
 }
 
-.game__btn:hover {
+.game__button:hover {
   transform: scale(1.1);
 }
 
